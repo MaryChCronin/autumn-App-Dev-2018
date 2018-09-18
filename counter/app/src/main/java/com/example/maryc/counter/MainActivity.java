@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mMessageTextView;
-    private int mCounter=0;
+    private int mCounter = 0;
 
 
     @Override
@@ -21,30 +21,36 @@ public class MainActivity extends AppCompatActivity {
         //code you add goes after the setContentView call
         mMessageTextView = findViewById(R.id.message_textView);
         //mMessageTextView.setText("Mary is Cool");
-        final Button resetButton =findViewById(R.id.reset_button);
-        resetButton.setOnClickListener(new View.OnClickListener(){
+        final Button resetButton = findViewById(R.id.reset_button);
+        resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 mCounter = 0;
                 updateView();
             }
         });
 
-        Log.d("Counter Button","This is a log, Logs are important");
-    }
-    public void handleDecrement(View view){
-    mCounter= mCounter - 1;
-      updateView();}
-
-
-
-
-    public void handleIncrement(View view){
-    mCounter=mCounter +1;
-    updateView();
+        Log.d("Counter Button", "This is a log, Logs are important");
     }
 
-    private void updateView(){
-        mMessageTextView.setText(getString(R.string.message_format,             mCounter));
-}
+    public void handleDecrement(View view) {
+        mCounter = mCounter - 1;
+        updateView();
+    }
+
+
+    public void handleIncrement(View view) {
+        mCounter = mCounter + 1;
+        updateView();
+    }
+
+    private void updateView() {
+        if (mCounter > 10) {
+           mMessageTextView.setVisibility(View.INVISIBLE);
+
+        } else {
+            mMessageTextView.setVisibility(View.VISIBLE);
+            mMessageTextView.setText(getString(R.string.message_format, mCounter));
+        }
+    }
 }

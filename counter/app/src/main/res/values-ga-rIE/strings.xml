@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Cuntais</string>
-    <string name="message_start">Cuntais = 0</string>
-    <string name="message_format">Count=%d</string>
+    <string name="app_name">Dia duit</string>
+    <string name="message_start">Comhair = 0</string>
+    <string name="message_format">Comhair = %d</string>
     <string name="button_decrement">-1</string>
     <string name="button_reset">Athshocraigh</string>
     <string name="button_increment">+1</string>

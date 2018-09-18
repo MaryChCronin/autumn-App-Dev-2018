@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Counter</string>
+    <string name="app_name">Hello Button</string>
     <string name="message_start">Count = 0</string>
     <string name="message_format">Count=%d</string>
     <string name="button_decrement">-1</string>
