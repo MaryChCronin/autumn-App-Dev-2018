@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Score Calculator</string>
+    <string name="Color_message_start">Colour Identification</string>
+    <string name="Color_message_total">0 Colour Points</string>
+    <string name="Color_message_total_sum">%d = Colour Points</string>
+    <string name="Color_button_3">3 FIXES</string>
+    <string name="Color_button_2">2 FIXES</string>
+    <string name="Color_button_1">1 FIX</string>
+    <string name="Color_button_0">0 FIXES</string>
+    <string name="Distance">Distance from Cone</string>
+    <string name="H1_Mid">Distance [ft]</string>
+    <string name="H1_right">Points</string>
+    <string name="R2_left">Near Ball</string>
+    <string name="R2_right">0</string>
+
+    <string name="R3_left">Far Ball</string>
+    <string name="R3_right">0</string>
+    <string name="R4_left">Robot Home</string>
+    <string name="R4_right">0</string>
+
+    <string name="Color_button_4">UPDATE</string>
+    <string name="white_black">White/Black (W/B) Mission:</string>
+    <string name="white_black_poimts">0 WB Points</string>
+    <string name="wb_fail">WB FAILURE</string>
+    <string name="wb_success">WB SUCCESS</string>
+    <string name="white_black_total">%d WB Points</string>
+
+
+    <string name="total_points">0 Points</string>
+    <string name="reset_button">RESET</string>
+
+
+    </resources>

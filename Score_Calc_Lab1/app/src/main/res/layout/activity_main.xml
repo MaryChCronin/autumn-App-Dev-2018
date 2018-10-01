@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/left_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:gravity="left"
+        android:textSize="6pt"
+        android:text="@string/Color_message_start"
+        />
+    <TextView
+        android:id="@+id/right_text_color_points"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:textSize="6pt"
+        android:gravity="right"
+        android:text="@string/Color_message_total"
+        />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/Color_button_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Color_button_3"
+            />
+        <Button
+            android:id="@+id/Color_button_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Color_button_2"
+            />
+        <Button
+            android:id="@+id/Color_button_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Color_button_1"
+            />
+        <Button
+            android:id="@+id/Color_button_0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Color_button_0"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/left_distance_text"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:gravity="left"
+        android:textSize="6pt"
+        android:text="@string/Distance"
+        />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_marginTop="110dp"
+        android:padding="5dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:background="@color/header"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text=""/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/H1_Mid"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/H1_right" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/Near_Ball"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+             <TextView
+                 android:id="@+id/near_ball_title"
+                android:text="@string/R2_left"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 />
+
+            <EditText
+                android:id="@+id/near_ball_distance"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:ems="5"
+                android:textAlignment="center"
+                android:inputType="number"
+                 />
+            <TextView
+                android:id="@+id/near_ball_points"
+                android:text="@string/R2_right"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/far_ball"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/far_ball_title"
+                android:text="@string/R3_left"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                />
+
+            <EditText
+                android:id="@+id/far_ball_distance"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:ems="5"
+                android:textAlignment="center"
+                android:inputType="number"
+                />
+            <TextView
+                android:id="@+id/far_ball_points"
+                android:text="@string/R3_right"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                />
+
+        </TableRow>
+
+        <TableRow
+        android:id="@+id/Row4_Robot"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/robot_home_title"
+            android:text="@string/R4_left"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            />
+
+        <EditText
+            android:id="@+id/robot_home_distance"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:ems="5"
+            android:textAlignment="center"
+            android:inputType="number"
+            />
+        <TextView
+            android:id="@+id/robot_home_points"
+            android:text="@string/R4_right"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textAlignment="center"
+            />
+
+
+
+    </TableRow>
+        <TableRow
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text=""
+                />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text=""
+                />
+
+            <Button
+                android:id="@+id/Update"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+
+                android:text="@string/Color_button_4" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/white_black"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/white_black"
+            />
+
+
+        <TextView
+            android:id="@+id/wb_points"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="right"
+            android:paddingRight="5dp"
+            android:text="@string/white_black_poimts"
+            />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/wb_fail"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:text="@string/wb_fail" />
+
+            <Button
+                android:id="@+id/wb_success"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:text="@string/wb_success" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/total_points"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:text="@string/total_points"
+
+                 />
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text=""
+                />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text=""
+                />
+
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="@string/reset_button" />
+
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
+
+</RelativeLayout>
