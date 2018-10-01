@@ -234,10 +234,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         }
+        switch (v.getId()) {
+            case R.id.Update:
+                near_ball_points_text.setText(Integer.toString(mNearBallPoints));
+                far_ball_points_text.setText(Integer.toString(mFarBallPoints));
+                robot_home_points_text.setText(Integer.toString(mRobotHomePoints));
 
+                CalcTotalPoints();
+
+        }
         CalcTotalPoints();
-
-            }
+    }
 
 
     private void updateView() {

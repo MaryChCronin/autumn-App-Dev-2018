@@ -235,7 +235,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-
                 android:text="@string/Color_button_4" />
         </TableRow>
         <TableRow
@@ -286,9 +285,24 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <TextView
+                android:id="@+id/filler"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                />
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <TextView
                 android:id="@+id/total_points"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -297,6 +311,18 @@
                 android:text="@string/total_points"
 
                  />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/filler2"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                />
 
         </TableRow>
 
