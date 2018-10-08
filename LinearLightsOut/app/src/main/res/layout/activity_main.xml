@@ -7,17 +7,14 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
-    <TableLayout
+    <LinearLayout
         android:id="@+id/board"
         android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
 
-        <TableRow>
-            <Button
+    <Button
                 android:id="@+id/button0"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -80,9 +77,8 @@
                 android:textSize="10dp"
                 android:tag="6"
                 android:onClick="pressedLight" />
-            />
-        </TableRow>
-    </TableLayout>
+
+    </LinearLayout>
     <TextView
         android:id="@+id/game_state_textview"
         android:layout_width="wrap_content"
@@ -91,6 +87,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
         android:textSize="30sp"
+        android:text="@string/start"
         android:textStyle="bold"
         />
     <Button
