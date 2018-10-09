@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mGame   = new LightsOutGame(mNumButtons);
-        mGameStateTextView = findViewById(R.id.start);
+        mGame  = new LightsOutGame(mNumButtons);
+        mGameStateTextView = findViewById(R.id.game_state_textview);
         mButtons = new Button[mNumButtons];
         mButtons[0] = findViewById(R.id.button0);
         mButtons[1] = findViewById(R.id.button1);
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0;i < mNumButtons ;i++)
         {
             mButtons[i].setEnabled(true);
-           // mButtons[i].setBackgroundColor(getResources().getColor(R.color.buttonBackground));
+            mButtons[i].setBackgroundColor(getResources().getColor(R.color.buttonBackground));
         }
         mGameStateTextView.setText(R.string.start);
     }
@@ -75,14 +75,17 @@ public class MainActivity extends AppCompatActivity {
             for (int i=0;i < mNumButtons;i++)
             {
                 mButtons[i].setEnabled(false);
-                //mButtons[i].setBackgroundColor(getResources().getColor(R.color.buttonBackgroundDisabled));
+                mButtons[i].setBackgroundColor(getResources().getColor(R.color.buttonBackgroundDisabled));
             }
 
         } else {
-            if (mGame.getNumPresses() == 1)
-                mGameStateTextView.setText(getString(R.string.first_turn));
+            if(mGame.getNumPresses() ==0)
+            mGameStateTextView.setText(R.string.start);
             else
-                mGameStateTextView.setText(getString(R.string.turn_count, mGame.getNumPresses() ));
+            if(mGame.getNumPresses() ==1)
+                mGameStateTextView.setText(R.string.first_turn);
+            else
+                mGameStateTextView.setText(getString(R.string.turn_count,mGame.getNumPresses()));
         }
 
 
