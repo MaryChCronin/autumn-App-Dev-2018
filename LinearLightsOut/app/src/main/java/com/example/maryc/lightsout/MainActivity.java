@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
     public void pressedLight (View view) {
         tagAsString = view.getTag().toString();
         tagAsInt = Integer.parseInt(tagAsString);
-        Log.d("TTT", "You pressed index " + tagAsInt);
-        Toast.makeText(this, "You pressed index " + tagAsInt, Toast.LENGTH_SHORT).show();
+        //Log.d("TTT", "You pressed index " + tagAsInt);
+        //Toast.makeText(this, "You pressed index " + tagAsInt, Toast.LENGTH_SHORT).show();
         mGame.pressedButtonAtIndex(tagAsInt);
         updateView();
     }
@@ -59,9 +59,10 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0;i < mNumButtons ;i++)
         {
             mButtons[i].setEnabled(true);
-            // mButtons[i].setBackgroundColor(getResources().getColor(R.color.buttonBackground));
+            mButtons[i].setBackgroundColor(getResources().getColor(R.color.buttonBackground));
+            mButtons[i].setTextColor(getResources().getColor(R.color.buttonText));
         }
-        mGameStateTextView.setText(R.string.start);
+        mGameStateTextView = findViewById(R.id.game_state_textview);
     }
     public void updateView()
     {
@@ -71,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
         }
         if (mGame.checkForWin() == true)
         {
-            mGameStateTextView.setText("You have won!");
+            mGameStateTextView.setText(R.string.win);
             for (int i=0;i < mNumButtons;i++)
             {
                 mButtons[i].setEnabled(false);
-                //mButtons[i].setBackgroundColor(getResources().getColor(R.color.buttonBackgroundDisabled));
+                mButtons[i].setTextColor(getResources().getColor(R.color.buttonBackground));
             }
 
         } else {
