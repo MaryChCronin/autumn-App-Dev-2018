@@ -4,6 +4,7 @@
     <string name="first_turn">You have taken 1 turn</string>
     <string name="turn_count">You have taken %d turn\'s</string>
     <string name="new_game">NEW GAME</string>
+    <string name="win">You have won!</string>
 
 
 </resources>

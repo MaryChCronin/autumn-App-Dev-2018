@@ -105,6 +105,7 @@
         android:layout_marginBottom="8dp"
         android:textSize="20sp"
         android:text="@string/start"
+        android:freezesText="true"
         android:textStyle="bold"
         />
 

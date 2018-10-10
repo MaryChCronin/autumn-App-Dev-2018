@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mGameStateTextView;
     private Button[] mButtons;
     private int mNumButtons = 7;
+    private int mNumPresses;
     String tagAsString;
     int tagAsInt;
 
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         mButtons[4] = findViewById(R.id.button4);
         mButtons[5] = findViewById(R.id.button5);
         mButtons[6] = findViewById(R.id.button6);
+        mNumPresses = mGame.getNumPresses();
+
 
         updateView();
     }
@@ -46,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public void pressedLight (View view) {
         tagAsString = view.getTag().toString();
         tagAsInt = Integer.parseInt(tagAsString);
-        Log.d("TTT", "You pressed index " + tagAsInt);
-        Toast.makeText(this, "You pressed index " + tagAsInt, Toast.LENGTH_SHORT).show();
+        //Log.d("TTT", "You pressed index " + tagAsInt);
+        //Toast.makeText(this, "You pressed index " + tagAsInt, Toast.LENGTH_SHORT).show();
         mGame.pressedButtonAtIndex(tagAsInt);
         updateView();
     }
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (mGame.checkForWin() == true)
         {
-            mGameStateTextView.setText("You have won!");
+            mGameStateTextView.setText(R.string.win);
             for (int i=0;i < mNumButtons;i++)
             {
                 mButtons[i].setEnabled(false);
@@ -89,5 +91,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("numPresses", mNumPresses);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        mNumPresses = savedInstanceState.getInt("numPresses");
     }
 }
