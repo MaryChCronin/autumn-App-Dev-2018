@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i=0;i < mNumButtons;i++)
             {
                 mButtons[i].setEnabled(false);
-                mButtons[i].setBackgroundColor(getResources().getColor(R.color.buttonBackgroundDisabled));
+                mButtons[i].setTextColor(getResources().getColor(R.color.buttonBackground));
             }
 
         } else {
