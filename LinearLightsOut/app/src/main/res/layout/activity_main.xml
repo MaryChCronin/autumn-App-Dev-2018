@@ -23,8 +23,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:tag="0"
                 android:onClick="pressedLight" />
 
@@ -33,9 +32,8 @@
                 android:id="@+id/button1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:tag="1"
                 android:onClick="pressedLight" />
 
@@ -43,9 +41,8 @@
                 android:id="@+id/button2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:tag="2"
                 android:onClick="pressedLight" />
 
@@ -54,8 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:tag="3"
                 android:onClick="pressedLight" />
 
@@ -64,8 +60,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:tag="4"
                 android:onClick="pressedLight" />
 
@@ -74,8 +69,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:tag="5"
                 android:onClick="pressedLight" />
 
@@ -84,8 +78,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:tag="6"
                 android:onClick="pressedLight" />
 
@@ -97,7 +90,7 @@
         android:layout_above="@id/board"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:text="@string/start"
         android:textStyle="bold"
         />

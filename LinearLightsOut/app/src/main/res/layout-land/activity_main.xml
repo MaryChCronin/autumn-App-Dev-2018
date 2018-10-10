@@ -26,6 +26,7 @@
                 android:layout_margin="5dp"
                 android:textSize="20dp"
                 android:tag="0"
+                android:freezesText="true"
                 android:onClick="pressedLight" />
 
 
@@ -37,11 +38,13 @@
                 android:layout_weight="1"
                 android:textSize="20dp"
                 android:tag="1"
+                android:freezesText="true"
                 android:onClick="pressedLight" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="0dp"
+                android:freezesText="true"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -56,6 +59,7 @@
                 android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:textSize="20dp"
+                android:freezesText="true"
                 android:tag="3"
                 android:onClick="pressedLight" />
 
@@ -66,6 +70,7 @@
                 android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:textSize="20dp"
+                android:freezesText="true"
                 android:tag="4"
                 android:onClick="pressedLight" />
 
@@ -76,6 +81,7 @@
                 android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:textSize="20dp"
+                android:freezesText="true"
                 android:tag="5"
                 android:onClick="pressedLight" />
 
@@ -86,6 +92,7 @@
                 android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:textSize="20dp"
+                android:freezesText="true"
                 android:tag="6"
                 android:onClick="pressedLight" />
         <Button
@@ -108,7 +115,5 @@
         android:freezesText="true"
         android:textStyle="bold"
         />
-
-
 
 </RelativeLayout>
