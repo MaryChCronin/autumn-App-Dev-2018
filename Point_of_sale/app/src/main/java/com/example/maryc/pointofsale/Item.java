@@ -13,6 +13,7 @@ public class Item {
     private int mQuantity;
     private GregorianCalendar mDeliveryDate;
 
+
     public Item() {
         mName = "Nothing";
         mQuantity = 0;
