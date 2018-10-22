@@ -15,7 +15,7 @@ public class Item {
 
 
     public Item() {
-        mName = "Nothing";
+        mName = "_ _ _ _ _";
         mQuantity = 0;
         mDeliveryDate = new GregorianCalendar();
     }

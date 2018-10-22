@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         mQuantityTextView=findViewById(R.id.quantity_text);
         mDateTextView=findViewById(R.id.date_text);
         mItems = new ArrayList<>();
+        mItems.add(new Item("Example 1",10,new GregorianCalendar()));
+        mItems.add(new Item("Example 2",15,new GregorianCalendar()));
+        mItems.add(new Item("Example 3",20,new GregorianCalendar()));
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.create().show();
 
-    }
+            }
 
     private void showCurrentItem() {
         mNameTextView.setText(mCurrentItem.getName());
@@ -118,12 +122,37 @@ public class MainActivity extends AppCompatActivity {
                 //startActivity(new Intent(Settings.ACTION_SETTINGS));
                 startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS));
                 return true;
+            case R.id.action_clear_all:
+               showClearDialog();
+                return true;
+
         }
         return super.onOptionsItemSelected(item);
 
     }
 
-          private void showSearchDialog() {
+    private void showClearDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.action_clear_all);
+        builder.setMessage(R.string.Sure);
+
+            builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    mItems.clear();
+                    mCurrentItem = new Item();
+                    showCurrentItem();
+
+
+
+
+                }
+            });
+            builder.setNegativeButton(android.R.string.cancel, null);
+            builder.create().show();
+
+        }
+    private void showSearchDialog() {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle(R.string.choose_item);
             builder.setItems(getNames(), new DialogInterface.OnClickListener() {
