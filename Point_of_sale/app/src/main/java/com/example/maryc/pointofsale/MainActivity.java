@@ -10,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
         mNameTextView =findViewById(R.id.name_text);
         mQuantityTextView=findViewById(R.id.quantity_text);
         mDateTextView=findViewById(R.id.date_text);
+        registerForContextMenu(mNameTextView);
+
         mItems = new ArrayList<>();
+
         mItems.add(new Item("Example 1",10,new GregorianCalendar()));
         mItems.add(new Item("Example 2",15,new GregorianCalendar()));
         mItems.add(new Item("Example 3",20,new GregorianCalendar()));
@@ -49,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addItem();      
+                insertItem(false);
                             }
         });
     }
 
-    private void addItem() {
+    private void insertItem(final boolean isEdit) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         View view = getLayoutInflater().inflate(R.layout.dialog_add, null, false);
         builder.setView(view);
@@ -62,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
         final EditText quantityEditText = (EditText) view.findViewById(R.id.edit_quantity);
         final CalendarView deliveryDateView = (CalendarView) view.findViewById(R.id.calendar_view);
         final GregorianCalendar calendar = new GregorianCalendar();
+        if (isEdit) {
+            nameEditText.setText(mCurrentItem.getName());
+            quantityEditText.setText(mCurrentItem.getQuantity() + "");
+            deliveryDateView.setDate(mCurrentItem.getDeliveryDateTime());
+        }
         deliveryDateView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
@@ -71,17 +80,26 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
                 String name = nameEditText.getText().toString();
                 int quantity = Integer.parseInt(quantityEditText.getText().toString());
-                mCurrentItem = new Item(name, quantity, calendar);
-                mItems.add(mCurrentItem);
+                if (isEdit) {
+                    mCurrentItem.setName(name);
+                    mCurrentItem.setQuantity(quantity);
+                    mCurrentItem.setDeliveryDate(calendar);
+                } else {
+                    mCurrentItem = new Item(name, quantity, calendar);
+                    mItems.add(mCurrentItem);
+                }
+
                 showCurrentItem();
             }
+
         });
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.create().show();
 
-            }
+       }
 
     private void showCurrentItem() {
         mNameTextView.setText(mCurrentItem.getName());
@@ -95,6 +113,30 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
+            super.onCreateContextMenu(menu, v, menuInfo);
+            getMenuInflater().inflate(R.menu.menu_context, menu);
+
+        }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_context_edit:
+                insertItem(true);
+                return true;
+            case R.id.menu_context_remove:
+                mItems.remove(mCurrentItem);
+                mCurrentItem = new Item();
+                showCurrentItem();
+                return true;
+        }
+        return super.onContextItemSelected(item);
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
