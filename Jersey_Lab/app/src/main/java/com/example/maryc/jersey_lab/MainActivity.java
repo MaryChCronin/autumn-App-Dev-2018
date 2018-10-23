@@ -2,8 +2,10 @@ package com.example.maryc.jersey_lab;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         String name = prefs.getString(KEY_JERSEY_NAME, getString(R.string.default_name));
-        int number = prefs.getInt(KEY_JERSEY_NUMBER, 17);
+        int number = prefs.getInt(KEY_JERSEY_NUMBER, 21);
         boolean default_colour = prefs.getBoolean(KEY_JERSEY_DEFAULT, true);
 
         mJersey = new Jersey(name, number, default_colour);
@@ -90,8 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS));
             return true;
-        }
+
+            }
         if (id == R.id.action_reset) {
             resetJersey();
 
@@ -103,8 +107,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void resetJersey() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.undo);
-        builder.setMessage(R.string.undo_sure);
+        builder.setTitle(R.string.reset);
+        builder.setMessage(R.string.reset_sure);
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override

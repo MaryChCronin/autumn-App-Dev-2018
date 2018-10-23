@@ -40,6 +40,7 @@
             android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="@string/green"
+
             />
 
         <Button
@@ -49,4 +50,5 @@
             android:text="@string/purple"
             />
     </LinearLayout>
+
 </LinearLayout>

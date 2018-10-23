@@ -8,6 +8,7 @@
     <string name="android">Cronin</string>
     <string name="dream_age">21</string>
     <string name="default_name">CRONIN</string>
-    <string name="undo">RESET</string>
-    <string name="undo_sure">Are you sure you want to Reset?</string>
+    <string name="update">Update Jersey Info</string>
+    <string name="reset">RESET</string>
+    <string name="reset_sure">Are you sure you wish to Reset?</string>
 </resources>

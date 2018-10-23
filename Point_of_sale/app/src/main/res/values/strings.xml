@@ -6,7 +6,7 @@
     <string name="quantity_format">Quantity: %d</string>
     <string name="date_format">Delivery date: %s</string>
     <string name="name_start"> ______</string>
-    <string name="quantity_start">Quantity: 0</string>
+    <string name="quantity_start">Quantity: </string>
     <string name="date_start">Delivery date</string>
     <string name="reset">Reset</string>
     <string name="remove">Remove</string>
