@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">JerseyLab</string>
+    <string name="action_settings">Settings</string>
+    <string name="Ireland">Ireland</string>
+    <string name="Team_Cronin">CRONIN</string>
+    <string name="name">Name</string>
+    <string name="number">Number</string>
+    <string name="Default">Cronin</string>
+    <string name="Num">0510661</string>
+    <string name="default_name">Cronin</string>
+</resources>
