@@ -14,10 +14,20 @@ import java.util.Random;
 public class NameAdapter extends RecyclerView.Adapter<NameAdapter.NameViewHolder>{
     private List<String> mNames = new ArrayList<>();
     private Random mRandom = new Random();
+    private RecyclerView mRecyclerView;
+
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        mRecyclerView = recyclerView;
+    }
 
     public void addNames(){
         mNames.add(0, getRandomName());
-        notifyDataSetChanged();
+        //notifyDataSetChanged();
+        notifyItemInserted(0);
+        notifyItemRangeChanged(0, mNames.size());
+        mRecyclerView.scrollToPosition(0);
 
     }
     private String getRandomName() {
