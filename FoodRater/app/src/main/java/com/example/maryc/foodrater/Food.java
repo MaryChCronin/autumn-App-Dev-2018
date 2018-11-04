@@ -29,7 +29,7 @@ public class Food {
   public Food() {
     mName = getRandomFoodName();
     mImageResourceId = sFoodImageMap.get(mName);
-    mRating = 1.0f;
+    mRating = 0.0f;
   }
 
   private String getRandomFoodName() {

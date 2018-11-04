@@ -11,11 +11,18 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder>{
 
     private List<Food> mFoods = new ArrayList<>();
+    //private Random mRandom =new Random();
     private RecyclerView mRecyclerView;
+
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        mRecyclerView = recyclerView;
+    }
 
     public void addFood(){
         mFoods.add(0,new Food());
