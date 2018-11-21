@@ -29,15 +29,15 @@ public class MovieQuoteAdaptor extends RecyclerView.Adapter<MovieQuoteAdaptor.Mo
     private List<DocumentSnapshot> mMovieQuotesSnapshots = new ArrayList<>();
 
     public MovieQuoteAdaptor() {
-        CollectionReference movieQuotesCollectionRef = FirebaseFirestore.getInstance().collection(constants.collection);
+        CollectionReference movieQuotesCollectionRef = FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH);
         movieQuotesCollectionRef
-                .orderBy(constants.created,Query.Direction.DESCENDING)
+                .orderBy(Constants.KEY_CREATED,Query.Direction.DESCENDING)
                 .limit(50)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
                         if (e != null) {
-                            Log.w(constants.TAG, "Listening Failed");
+                            Log.w(Constants.TAG, "Listening Failed");
                             return;
                         }
                         mMovieQuotesSnapshots = queryDocumentSnapshots.getDocuments();
@@ -56,8 +56,8 @@ public class MovieQuoteAdaptor extends RecyclerView.Adapter<MovieQuoteAdaptor.Mo
     @Override
     public void onBindViewHolder(@NonNull MovieQuoteViewHolder movieQuoteViewHolder, int i) {
         DocumentSnapshot ds = mMovieQuotesSnapshots.get(i);
-        String movie = (String) ds.get(constants.movie);
-        String quote = (String) ds.get(constants.quote);
+        String movie = (String) ds.get(Constants.KEY_MOVIE);
+        String quote = (String) ds.get(Constants.KEY_QUOTE);
         movieQuoteViewHolder.mMovieTextView.setText(movie);
         movieQuoteViewHolder.mQuoteTextView.setText(quote);
     }
@@ -81,7 +81,7 @@ public class MovieQuoteAdaptor extends RecyclerView.Adapter<MovieQuoteAdaptor.Mo
                     DocumentSnapshot ds = mMovieQuotesSnapshots.get(getAdapterPosition());
                     Context c = itemView.getContext();
                     Intent intent = new Intent(c,MovieQuoteDetailActivity.class);
-                    intent.putExtra(constants.docID, ds.getId());
+                    intent.putExtra(Constants.EXTRA_DOCUMENT_ID, ds.getId());
                     c.startActivity(intent);
                 }
             });
