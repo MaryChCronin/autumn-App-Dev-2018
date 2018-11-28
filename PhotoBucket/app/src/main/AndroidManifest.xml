@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.maryc.moviequotes">
+    package="ie.ul.adrianosullivan.photobucket">
 
     <application
         android:allowBackup="true"
@@ -19,15 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
-            android:name=".MovieQuoteDetailActivity"
-            android:label="Movie Quote"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
-
+            android:name=".PhotoBucketDetailActivity"
+            android:label="photo bucket"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
